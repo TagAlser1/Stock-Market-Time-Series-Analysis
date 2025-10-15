@@ -17,7 +17,7 @@ company_list = [
 
 all_data = pd.DataFrame()
 for file in company_list:
-    current_df = pd.read_csv(file)
+    current_df = pd.read_csv(file, storage_options=None)
     all_data = pd.concat([all_data, current_df], ignore_index=True)
 
 all_data['date'] = pd.to_datetime(all_data['date'])
